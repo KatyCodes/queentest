@@ -1,12 +1,32 @@
 <?php
     class Queen
     {
-      function ytest ($queeny,$piecey)
+      function xy_axistest ($queen,$piece)
       {
-          if ($queeny == $piecey) {
+          if ($queen == $piece) {
             return true;
           }
       }
+
+      function diagonalTest ($piecex, $piecey, $queenx, $queeny)
+      {
+        for ($i=1; $i < 50; $i++) {
+          if (($queenx + $i == $piecex) && ($queeny +$i == $piecey))
+          {
+          return true;
+          } elseif (($queenx + $i == $piecex) && ($queeny - $i == $piecey))
+          {
+          return true;
+          } elseif (($queenx - $i == $piecex) && ($queeny + $i == $piecey))
+          {
+          return true;
+          } elseif (($queenx - $i == $piecex) && ($queeny - $i == $piecey))
+          {
+          return true;
+          }
+        }
+      return false;
     }
+  }
 
 ?>
